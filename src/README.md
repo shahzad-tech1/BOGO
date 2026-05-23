@@ -91,7 +91,7 @@ IntelliJ IDEA: Development environment
 1. Clone the repository
 
 ```bash
-git clone https://github.com/shahzad-tech1/Smart-Public-Bus-Transport-System.git
+git clone https://github.com/shahzad-tech1/BOGO.git
 ```
 
 2. Open the project in IntelliJ IDEA
