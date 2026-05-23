@@ -1,0 +1,23 @@
+# --- Compiled files ---
+target/
+*.class
+
+# --- IntelliJ IDEA ---
+.idea/
+*.iml
+*.iws
+*.ipr
+# We exclude the entire .idea folder because Maven will 
+# regenerate it perfectly on your collaborators' machines.
+
+# --- Maven Wrapper ---
+# Keeping the wrapper is good so they don't even need Maven installed
+!.mvn/wrapper/maven-wrapper.jar
+
+# --- Log files & OS files ---
+*.log
+.DS_Store
+Thumbs.db
+
+# --- Crash logs ---
+hs_err_pid*

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.BOGO.BOGOUIController" alignment="CENTER" spacing="24" styleClass="root">
+    <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+
+    <!-- General live simulation map — all routes + all buses (GeneralMapController) -->
+    <Pane fx:id="map_canvas_pane" HBox.hgrow="ALWAYS" styleClass="map-placeholder"/>
+
+    <VBox prefWidth="310" spacing="14" styleClass="neon-card">
+        <padding><Insets top="18" right="18" bottom="18" left="18"/></padding>
+        <Label text="Boarding Passengers" styleClass="subheader-text"/>
+        <ListView fx:id="list_boarding_passengers" VBox.vgrow="ALWAYS"/>
+    </VBox>
+</HBox>

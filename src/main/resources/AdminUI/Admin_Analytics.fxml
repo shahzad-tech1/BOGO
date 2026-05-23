@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.BOGO.BOGOUIController" styleClass="root">
+    <VBox spacing="24">
+        <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+        <HBox spacing="24" VBox.vgrow="ALWAYS">
+            <VBox alignment="CENTER" spacing="10" HBox.hgrow="ALWAYS" styleClass="neon-card">
+                <Label text="Total Passengers" styleClass="muted-text"/>
+                <Label fx:id="lbl_total_passengers" text="0" styleClass="header-text"/>
+            </VBox>
+            <VBox alignment="CENTER" spacing="10" HBox.hgrow="ALWAYS" styleClass="neon-card">
+                <Label text="Total Drivers" styleClass="muted-text"/>
+                <Label fx:id="lbl_total_Drivers" text="0" styleClass="header-text"/>
+            </VBox>
+        </HBox>
+        <HBox spacing="24" VBox.vgrow="ALWAYS">
+            <VBox spacing="12" HBox.hgrow="ALWAYS" styleClass="neon-card">
+                <padding><Insets top="18" right="18" bottom="18" left="18"/></padding>
+                <Label text="Passengers" styleClass="subheader-text"/>
+                <TextField fx:id="txt_search_employee" promptText="Search passenger" styleClass="neon-text-field"/>
+                <ListView fx:id="list_employees" VBox.vgrow="ALWAYS"/>
+            </VBox>
+            <VBox spacing="12" HBox.hgrow="ALWAYS" styleClass="neon-card">
+                <padding><Insets top="18" right="18" bottom="18" left="18"/></padding>
+                <Label text="Drivers" styleClass="subheader-text"/>
+                <TextField fx:id="txt_search_driver" promptText="Search driver" styleClass="neon-text-field"/>
+                <ListView fx:id="list_drivers" VBox.vgrow="ALWAYS"/>
+            </VBox>
+        </HBox>
+    </VBox>
+    <!-- TODO: Search Filter Logic - Mock data for preview, link to DB for production. Toggle pane_detail_overlay visibility on list click. -->
+    <AnchorPane fx:id="pane_detail_overlay" visible="false" maxWidth="340" maxHeight="190" styleClass="neon-card">
+        <padding><Insets top="22" right="22" bottom="22" left="22"/></padding>
+        <VBox spacing="12" AnchorPane.leftAnchor="22" AnchorPane.rightAnchor="22" AnchorPane.topAnchor="22">
+            <Label text="Resource Detail" styleClass="subheader-text"/>
+            <Label fx:id="lbl_detail_name" text="Name" styleClass="body-text"/>
+            <Label fx:id="lbl_detail_id" text="ID" styleClass="muted-text"/>
+        </VBox>
+    </AnchorPane>
+</StackPane>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.BOGO.BOGOUIController" alignment="CENTER" spacing="24" styleClass="root">
+    <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+
+    <!-- Same DB-backed booking map as Book Ride -->
+    <StackPane HBox.hgrow="ALWAYS" styleClass="map-placeholder">
+        <Pane fx:id="booking_map_canvas" styleClass="graph-canvas"/>
+    </StackPane>
+
+    <!-- Multi-stop booking form -->
+    <VBox prefWidth="380" maxWidth="380" spacing="18">
+        <VBox spacing="14" styleClass="neon-card">
+            <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+            <Label text="Multi Stop Booking" styleClass="header-text"/>
+            <Label text="Number of stops" styleClass="muted-text"/>
+            <ComboBox fx:id="combo_stop_count" promptText="Select stop count"
+                      maxWidth="Infinity"/>
+        </VBox>
+
+        <VBox spacing="14" styleClass="neon-card">
+            <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+            <Label text="Stops" styleClass="subheader-text"/>
+            <ScrollPane fx:id="scroll_dynamic_stops" fitToWidth="true" prefHeight="260">
+                <VBox fx:id="box_dynamic_stops" spacing="10"/>
+            </ScrollPane>
+            <Button fx:id="btn_book_multi" text="BOOK MULTI STOP"
+                    onAction="#handleMultiStopBooking"
+                    maxWidth="Infinity" styleClass="button-purple"/>
+            <Label fx:id="lbl_multi_booking_status" text="" wrapText="true"
+                   styleClass="muted-text"/>
+        </VBox>
+    </VBox>
+</HBox>

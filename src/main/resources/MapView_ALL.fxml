@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+
+<!--
+  MapView_ALL.fxml — Live transport map canvas.
+  Rendered by MapCanvasRenderer (called from BOGOUIController.initializeMapView).
+  This StackPane hosts the Pane that receives programmatically drawn
+  stop nodes, route edges, and animated bus icons.
+-->
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:id="map_view_root" styleClass="map-placeholder"
+           fx:controller="org.BOGO.BOGOUIController">
+    <AnchorPane>
+        <!-- Live map canvas — stop circles, route lines and bus markers are drawn here -->
+        <Pane fx:id="map_canvas_pane"
+              AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+              AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+              styleClass="graph-canvas"/>
+    </AnchorPane>
+</StackPane>

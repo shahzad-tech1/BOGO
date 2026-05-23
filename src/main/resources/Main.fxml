@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.BOGO.BOGOUIController" styleClass="root">
+    <HBox alignment="CENTER" fillHeight="false" maxWidth="980" spacing="36">
+        <VBox alignment="CENTER" prefWidth="285" maxHeight="250" spacing="18" styleClass="neon-card">
+            <padding><Insets top="34" right="34" bottom="34" left="34"/></padding>
+            <Label text="ADMIN" styleClass="entity-icon"/>
+            <Label text="Admin" styleClass="subheader-text"/>
+            <Button fx:id="btn_admin" text="Enter Console" onAction="#goAdminLogin" maxWidth="Infinity" styleClass="button-green"/>
+        </VBox>
+        <VBox alignment="CENTER" prefWidth="285" maxHeight="250" spacing="18" styleClass="neon-card">
+            <padding><Insets top="34" right="34" bottom="34" left="34"/></padding>
+            <Label text="RIDER" styleClass="entity-icon"/>
+            <Label text="Passenger" styleClass="subheader-text"/>
+            <Button fx:id="btn_passenger" text="Book Ride" onAction="#goPassengerLogin" maxWidth="Infinity" styleClass="button-purple"/>
+        </VBox>
+        <VBox alignment="CENTER" prefWidth="285" maxHeight="250" spacing="18" styleClass="neon-card">
+            <padding><Insets top="34" right="34" bottom="34" left="34"/></padding>
+            <Label text="DRIVE" styleClass="entity-icon"/>
+            <Label text="Driver" styleClass="subheader-text"/>
+            <Button fx:id="btn_driver" text="Start Shift" onAction="#goDriverLogin" maxWidth="Infinity" styleClass="button-green"/>
+        </VBox>
+    </HBox>
+</StackPane>

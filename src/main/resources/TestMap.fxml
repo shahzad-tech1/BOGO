@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.BOGO.TestMap" styleClass="root">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="14" styleClass="shell-header">
+            <padding><Insets top="16" right="22" bottom="16" left="22"/></padding>
+            <Label text="GPS Route Map" styleClass="subheader-text"/>
+            <ComboBox fx:id="combo_source" promptText="Source" prefWidth="180"/>
+            <ComboBox fx:id="combo_destination" promptText="Destination" prefWidth="180"/>
+            <Button fx:id="btn_find_path" text="Find Path" onAction="#findPath" styleClass="button-green"/>
+            <Label fx:id="lbl_path_summary" text="Select source and destination" styleClass="muted-text"/>
+        </HBox>
+    </top>
+    <center>
+        <Pane fx:id="mapCanvas" styleClass="graph-canvas"/>
+    </center>
+</BorderPane>

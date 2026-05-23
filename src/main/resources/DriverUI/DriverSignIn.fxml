@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.BOGO.BOGOUIController" alignment="CENTER" styleClass="root">
+    <VBox alignment="CENTER" maxWidth="400" spacing="18" styleClass="neon-card">
+        <padding><Insets top="34" right="34" bottom="34" left="34"/></padding>
+        <Label text="BOGO DRIVER" styleClass="header-text"/>
+        <TextField fx:id="txt_driver_id" promptText="Driver ID (ABC-1234-1234)" styleClass="neon-text-field"/>
+        <PasswordField fx:id="txt_password" promptText="Password" styleClass="neon-text-field"/>
+        <Button fx:id="btn_driver_login" text="LOGIN" onAction="#loginDriver" maxWidth="Infinity" styleClass="button-green"/>
+        <Label fx:id="lbl_driver_login_status" text="" wrapText="true" styleClass="muted-text"/>
+        <Button text="BACK" onAction="#goMain" maxWidth="Infinity" styleClass="button-purple"/>
+    </VBox>
+</VBox>

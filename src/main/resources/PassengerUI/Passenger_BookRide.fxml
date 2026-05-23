@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.BOGO.BOGOUIController" alignment="CENTER" spacing="24" styleClass="root">
+    <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+
+    <!-- Live booking map (DB-backed stops + pathfinding) -->
+    <StackPane HBox.hgrow="ALWAYS" styleClass="map-placeholder">
+        <Pane fx:id="booking_map_canvas" styleClass="graph-canvas"/>
+    </StackPane>
+
+    <!-- Booking form -->
+    <VBox prefWidth="340" spacing="18" styleClass="neon-card">
+        <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+        <Label text="Book Ride" styleClass="header-text"/>
+
+        <Label text="Pickup Stop" styleClass="muted-text"/>
+        <ComboBox fx:id="combo_stop_1" editable="true" promptText="Select pickup stop"
+                  maxWidth="Infinity"/>
+
+        <Label text="Destination Stop" styleClass="muted-text"/>
+        <ComboBox fx:id="combo_stop_2" editable="true" promptText="Select destination stop"
+                  maxWidth="Infinity"/>
+
+        <Button fx:id="btn_confirm_booking" text="CONFIRM BOOKING"
+                onAction="#handleBookingAction" maxWidth="Infinity" styleClass="button-green"/>
+
+        <!-- Status feedback after booking attempt -->
+        <Label fx:id="lbl_booking_status" text="" wrapText="true" styleClass="muted-text"/>
+    </VBox>
+</HBox>

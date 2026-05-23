@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.BOGO.BOGOUIController" styleClass="root">
+    <HBox spacing="24">
+        <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+
+        <!-- Live simulation map — GeneralMapController renders all routes + buses -->
+        <Pane fx:id="map_canvas_pane" HBox.hgrow="ALWAYS" styleClass="map-placeholder"/>
+
+        <!-- Passenger bookings — populated from DB by loadPassengerBookingsFromDB() -->
+        <VBox prefWidth="340" spacing="12">
+            <Label text="My Bookings" styleClass="subheader-text"/>
+            <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS"
+                        style="-fx-background-color: transparent; -fx-background: transparent;">
+                <VBox fx:id="box_active_bookings" spacing="12"/>
+            </ScrollPane>
+        </VBox>
+    </HBox>
+
+    <!-- Cancel ride overlay — btn_cancel_ride calls cancelRideConfirmed() -->
+    <VBox fx:id="pane_cancel_ride" visible="false" alignment="CENTER"
+          maxWidth="400" spacing="14" styleClass="neon-card">
+        <padding><Insets top="28" right="28" bottom="28" left="28"/></padding>
+        <Label text="Cancel Ride?" styleClass="subheader-text"/>
+        <Label text="This will deactivate your booking permanently."
+               styleClass="muted-text" wrapText="true" textAlignment="CENTER"/>
+        <Label fx:id="lbl_cancel_path" text="" wrapText="true"
+               style="-fx-text-fill:#00f2ff; -fx-font-size:13px; -fx-font-style:italic;"
+               textAlignment="CENTER"/>
+        <Button fx:id="btn_cancel_ride" text="YES, CANCEL RIDE"
+                onAction="#cancelRideConfirmed"
+                maxWidth="Infinity" styleClass="button-red"/>
+        <Button fx:id="btn_go_back" text="GO BACK"
+                onAction="#hideCancelRidePane"
+                maxWidth="Infinity" styleClass="button-purple"/>
+    </VBox>
+</StackPane>

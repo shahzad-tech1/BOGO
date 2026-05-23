@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.BOGO.BOGOUIController" styleClass="root">
+    <VBox spacing="14">
+        <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+        <Label text="Active Alerts" styleClass="subheader-text"/>
+        <ListView fx:id="list_active_alerts" styleClass="alert-list" VBox.vgrow="ALWAYS"/>
+        <!-- Clicking RESOLVE SELECTED marks the selected alert RESOLVED in DB -->
+        <Button fx:id="btn_resolve" text="RESOLVE SELECTED" onAction="#handleResolveAlert" styleClass="button-green"/>
+    </VBox>
+    <VBox fx:id="pane_resolution_dialog" visible="false" alignment="CENTER" maxWidth="360" spacing="16" styleClass="neon-card">
+        <padding><Insets top="28" right="28" bottom="28" left="28"/></padding>
+        <Label text="Confirm Resolution" styleClass="subheader-text"/>
+        <Button text="Mark as Resolved" onAction="#handleResolveAlert" maxWidth="Infinity" styleClass="button-green"/>
+        <Button text="Cancel" onAction="#hideResolutionDialog" maxWidth="Infinity" styleClass="button-purple"/>
+    </VBox>
+</StackPane>

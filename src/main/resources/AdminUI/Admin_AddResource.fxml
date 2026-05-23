@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.BOGO.BOGOUIController" alignment="CENTER" fillHeight="false" maxWidth="820" spacing="30" styleClass="root">
+    <VBox prefWidth="380" maxHeight="360" spacing="14" styleClass="neon-card">
+        <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+        <Label text="Add Bus" styleClass="subheader-text"/>
+        <TextField fx:id="txt_bus_number" promptText="Bus Number (ABC-123)" styleClass="neon-text-field"/>
+        <TextField fx:id="txt_bus_company" promptText="Company" styleClass="neon-text-field"/>
+        <TextField fx:id="txt_bus_year" promptText="Year" styleClass="neon-text-field"/>
+        <ComboBox fx:id="choice_max_capacity" promptText="Max Capacity" maxWidth="Infinity"/>
+        <Button fx:id="btn_add_bus" text="ADD BUS" onAction="#handleAddBus" maxWidth="Infinity" styleClass="button-green"/>
+        <Label fx:id="lbl_bus_status" text="" styleClass="muted-text"/>
+    </VBox>
+    <VBox prefWidth="380" maxHeight="400" spacing="14" styleClass="neon-card">
+        <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+        <Label text="Add Driver" styleClass="subheader-text"/>
+        <TextField fx:id="txt_driver_fname" promptText="First Name" styleClass="neon-text-field"/>
+        <TextField fx:id="txt_driver_lname" promptText="Last Name" styleClass="neon-text-field"/>
+        <TextField fx:id="txt_driver_cnic" promptText="CNIC (13 digits)" styleClass="neon-text-field"/>
+        <TextField fx:id="txt_driver_email" promptText="Email" styleClass="neon-text-field"/>
+        <Button fx:id="btn_add_driver" text="ADD DRIVER" onAction="#handleAddDriver" maxWidth="Infinity" styleClass="button-purple"/>
+        <Label fx:id="lbl_driver_status" text="" styleClass="muted-text"/>
+    </VBox>
+</HBox>

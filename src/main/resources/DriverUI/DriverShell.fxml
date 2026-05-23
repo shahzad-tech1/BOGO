@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.BOGO.BOGOUIController" styleClass="root">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="16" styleClass="shell-header">
+            <padding><Insets top="16" right="24" bottom="16" left="24"/></padding>
+            <Label text="BOGO DRIVER" styleClass="header-text"/>
+            <Label text="Shift Console" styleClass="muted-text"/>
+        </HBox>
+    </top>
+    <left>
+        <VBox prefWidth="230" spacing="6" styleClass="nav-panel">
+            <padding><Insets top="20" right="0" bottom="20" left="0"/></padding>
+            <Button fx:id="btn_nav_dashboard" text="Dashboard" onAction="#loadDriverDashboard" maxWidth="Infinity" styleClass="nav-button"/>
+            <Button fx:id="btn_nav_send_alert" text="Send Alert" onAction="#loadDriverSendAlert" maxWidth="Infinity" styleClass="nav-button"/>
+            <Button fx:id="btn_nav_view_route" text="View Route" onAction="#loadDriverRoute" maxWidth="Infinity" styleClass="nav-button"/>
+            <Button fx:id="btn_nav_bus_metrics" text="Bus Metrics" onAction="#loadDriverMetrics" maxWidth="Infinity" styleClass="nav-button"/>
+            <Region VBox.vgrow="ALWAYS"/>
+            <Button text="Logout" onAction="#goMain" maxWidth="Infinity" styleClass="logout-button"/>
+        </VBox>
+    </left>
+    <center>
+        <StackPane fx:id="content_area"/>
+    </center>
+</BorderPane>

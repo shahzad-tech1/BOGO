@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="org.BOGO.BOGOUIController" alignment="CENTER" hgap="24" styleClass="root">
+    <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+    <columnConstraints>
+        <ColumnConstraints percentWidth="38"/>
+        <ColumnConstraints percentWidth="62"/>
+    </columnConstraints>
+    <VBox spacing="14" GridPane.columnIndex="0" styleClass="neon-card">
+        <padding><Insets top="18" right="18" bottom="18" left="18"/></padding>
+        <Label text="System Alerts" styleClass="subheader-text"/>
+        <!-- TODO: Fetch current Message objects (Alerts) from backend. -->
+        <ListView fx:id="list_system_alerts" VBox.vgrow="ALWAYS"/>
+    </VBox>
+    <StackPane fx:id="map_container" GridPane.columnIndex="1">
+        <fx:include source="../MapView_ALL.fxml"/>
+    </StackPane>
+</GridPane>

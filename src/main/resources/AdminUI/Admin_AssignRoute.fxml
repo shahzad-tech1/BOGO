@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.BOGO.BOGOUIController" styleClass="root">
+    <VBox spacing="24">
+        <padding><Insets top="28" right="28" bottom="28" left="28"/></padding>
+
+        <!-- Page Title -->
+        <Label text="Assign Route to Driver" styleClass="subheader-text"/>
+        <Separator/>
+
+        <HBox spacing="24">
+            <!-- ===== Assignment Form ===== -->
+            <VBox spacing="14" HBox.hgrow="ALWAYS" styleClass="neon-card">
+                <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                <Label text="Select Driver" styleClass="muted-text"/>
+                <ComboBox fx:id="combo_assign_driver" promptText="Choose a driver" maxWidth="Infinity" styleClass="combo-box"/>
+
+                <Label text="Select Route" styleClass="muted-text"/>
+                <ComboBox fx:id="combo_assign_route" promptText="Choose a route" maxWidth="Infinity" styleClass="combo-box"/>
+
+                <Label text="Select Bus" styleClass="muted-text"/>
+                <ComboBox fx:id="combo_assign_bus" promptText="Choose an available bus" maxWidth="Infinity" styleClass="combo-box"/>
+
+                <Region VBox.vgrow="ALWAYS"/>
+                <Button text="Assign" onAction="#handleAssignRoute" maxWidth="Infinity" styleClass="button-green"/>
+                <Label fx:id="lbl_assign_status" text="" styleClass="muted-text"/>
+            </VBox>
+
+            <!-- ===== Current Assignments Panel ===== -->
+            <VBox spacing="14" HBox.hgrow="ALWAYS" styleClass="neon-card">
+                <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                <Label text="Current Assignments" styleClass="subheader-text"/>
+                <javafx.scene.control.ListView fx:id="list_current_assignments" VBox.vgrow="ALWAYS"/>
+                <Button text="Refresh" onAction="#refreshAssignments" maxWidth="Infinity" styleClass="button-purple"/>
+            </VBox>
+        </HBox>
+    </VBox>
+</StackPane>

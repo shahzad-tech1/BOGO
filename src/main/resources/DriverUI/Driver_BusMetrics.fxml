@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.BOGO.BOGOUIController" alignment="CENTER" fillHeight="false" maxWidth="940" spacing="34" styleClass="root">
+    <VBox alignment="CENTER" prefWidth="280" maxHeight="340" spacing="16" styleClass="neon-card">
+        <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+        <ProgressIndicator fx:id="gauge_tyres" prefWidth="190" prefHeight="190" styleClass="gauge-indicator"/>
+        <Label fx:id="lbl_tyres_percent" text="88%" styleClass="metric-percent"/>
+        <Label text="Tyres" styleClass="subheader-text"/>
+    </VBox>
+    <VBox alignment="CENTER" prefWidth="280" maxHeight="340" spacing="16" styleClass="neon-card">
+        <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+        <ProgressIndicator fx:id="gauge_engine" prefWidth="190" prefHeight="190" styleClass="gauge-yellow"/>
+        <Label fx:id="lbl_engine_percent" text="62%" styleClass="metric-percent"/>
+        <Label text="Engine" styleClass="subheader-text"/>
+    </VBox>
+    <VBox alignment="CENTER" prefWidth="280" maxHeight="340" spacing="16" styleClass="neon-card">
+        <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+        <ProgressIndicator fx:id="gauge_chassis" prefWidth="190" prefHeight="190" styleClass="gauge-red"/>
+        <Label fx:id="lbl_chassis_percent" text="34%" styleClass="metric-percent"/>
+        <Label text="Chassis" styleClass="subheader-text"/>
+    </VBox>
+    <!-- TODO: Sync with Bus hardware sensors/Mock data. -->
+</HBox>
